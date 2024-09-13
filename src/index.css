@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro", sans-serif;;
+  line-height: 1.5;
+  font-weight: 400;
+  box-sizing: border-box;
+
+  /* color-scheme: light dark; */
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  /* font-weight: 500;
+  color: #646cff; */
+  text-decoration: inherit;
+  transition-duration: 500ms;
+}
+li:hover a {
+  /* color: #535bf2; */
+  color: #2a69b8;
+  transition-duration: 500ms;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  /* place-items: center; */
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* @media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+} */
+
+.dots-container{
+  position: absolute;
+  bottom: 40px;
+  /* bottom: 1.8055vw; */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 40;
+}
+
+.dot {
+  cursor: pointer;
+  height: 24px;
+
+  width: 24px;
+
+  margin: 0 6px;
+
+  background-color: #d9d9d900;
+  border: 3px solid white ;
+
+  border-radius: 50%;
+  display: inline-block;
+  transition: 0.6s ease;
+}
+
+.dot.active, .dot:hover {
+  background-color: #4e111100;
+  border: 3px solid #449edd ;
+  transition:  0.6s ease;
+  
+}
+
+.scroll-up{
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  color: #449edd;
+  border: 1px #449edd solid;
+}
+
+.scroll-up:hover{
+  background-color: #114488;
+  color: white;
+  border-color: #114488;
+
+}
+
+
+.card-equipo-directivo:hover .card-text-container{
+  display: flex;
+  transition: 0.4s;
+}
+
+.card-text-container{
+  display: none;
+  transition: 0.4s;
+  background: -webkit-linear-gradient(45deg, rgba(255, 0, 86, 0.8) 0%, rgba(255, 0, 4, 0.7) 100%) transparent;
+  background: linear-gradient(45deg, rgba(255, 0, 86, 0.8) 0%, rgba(255, 0, 4, 0.7) 100%) transparent;
+}
