@@ -1,18 +1,15 @@
-import { useState } from 'react'
+import { useState,useRef } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { BrowserRouter,Routes, Route } from "react-router-dom";
+
+import { FaChevronUp } from "react-icons/fa";
+
 import Homepage from './routes/Homepage'
 
 function App() {
   const [count, setCount] = useState(0);
-
-  const scrollToTop = () => {
-    document.getElementById('inicio-pag').scrollIntoView({
-      behavior: 'smooth',
-    });
-  };
 
   return (
     <>
@@ -38,14 +35,13 @@ function App() {
       </p> */}
 
       <BrowserRouter >
-        <div id="inicio-pag"></div>
         <Routes>
           <Route path="/" element={<Homepage />}/> 
         </Routes>
 
-        <a href="" onClick={scrollToTop}>
+        <a href="#">
           <div className='scroll-up fixed flex justify-center items-center w-10 h-10 font-bold right-[30px] bottom-[60px]'>
-            v
+            <FaChevronUp />
           </div>
         </a>
 

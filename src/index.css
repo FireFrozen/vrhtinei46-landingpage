@@ -4,7 +4,7 @@
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  font-family: "Source Sans Pro", sans-serif;;
+  /* font-family: "Source Sans Pro", sans-serif;; */
   line-height: 1.5;
   font-weight: 400;
   box-sizing: border-box;
@@ -117,6 +117,9 @@ button:focus-visible {
   box-sizing: border-box;
   color: #449edd;
   border: 1px #449edd solid;
+  border-radius: 0.375rem 0;
+
+
 }
 
 .scroll-up:hover{
@@ -129,12 +132,15 @@ button:focus-visible {
 
 .card-equipo-directivo:hover .card-text-container{
   display: flex;
-  transition: 0.4s;
+  transition-duration: 500ms;
+  opacity: 1;
+
 }
 
 .card-text-container{
-  display: none;
-  transition: 0.4s;
+  display: flex;
+  transition-duration: 500ms;
   background: -webkit-linear-gradient(45deg, rgba(255, 0, 86, 0.8) 0%, rgba(255, 0, 4, 0.7) 100%) transparent;
   background: linear-gradient(45deg, rgba(255, 0, 86, 0.8) 0%, rgba(255, 0, 4, 0.7) 100%) transparent;
+  opacity: 0;
 }

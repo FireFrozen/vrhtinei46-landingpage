@@ -6,11 +6,32 @@ import VisionComp from '../imagenes/visiOn-compartida.jpg'
 import CardEquipoDirectivo from "../components/CardEquipoDirectivo"
 import FooterApp from '../components/FooterApp'
 
+import BtnScrollUp from '../components/BtnScrollUp'
+
 import CardImgMariaca from '../imagenes/director_baja.png'
 import CardImgBaltazar from '../imagenes/subdirector-alexander_b.jpg'
+import CardImgTapahausco from '../imagenes/subdirectora-vilma-tapahuasco_b.jpg'
+import CardImgSilva from '../imagenes/subdirectora_elva-silva_b.jpg'
+import CardImgGutierrez from '../imagenes/subdirecttor-hugo_b.png'
+
 
 
 const Homepage = () => {
+
+    //btn scroll up
+    const initRef = useRef(null);
+
+    const scrollToTop = () => {
+        // document.getElementById('inicio-pag').scrollIntoView({
+        //   behavior: 'smooth',
+        // });
+
+        initRef.current.scrollIntoView({
+        behavior: 'smooth',
+        });
+    };
+
+
     let slideIndex = 1;
 
     const slidesRef = useRef([]); 
@@ -19,8 +40,8 @@ const Homepage = () => {
     useEffect(() => {
         // Ahora se puede acceder a todos los elementos referenciados en slidesRef.current
         slidesRef.current.forEach((slide, index) => {
-          //console.log(`Slide ${index}:`, slide);
-          // Puedes hacer lo que necesites con cada slide
+
+
         });
     }, []);
 
@@ -98,6 +119,8 @@ const Homepage = () => {
   return (
     <div className='w-screen max-w-full	'>
         <NavBar/>
+        <div id="inicio-pag" ref={initRef}></div>
+
         <div className='carrusel relative w-full '>
             <div ref={addToSlidesRefs} className="slides slide-1 bg-[url('./imagenes/inei01.jpg')] bg-center bg-cover relative h-[700px] w-full flex justify-center" >
                 <div className=' bg-[#08329a] opacity-60 w-full h-full  absolute inset-0'>
@@ -158,13 +181,15 @@ const Homepage = () => {
         </section>
 
         <section className='text-black bg-white'>
-            <div className='px-4 mx-auto flex flex-col justify-center items-center xl:max-w-[1140px] lg:max-w-[960px]'>
+            <div className='px-4 mx-auto flex flex-col justify-center items-center 
+             max-w-[85%] md:max-w-[690px] lg:max-w-[960px] xl:max-w-[89%] 2xl:max-w-[1400px]
+            '>
 
                 <h1 className='text-4xl font-bold pt-20 pb-8'>
                     RESEÑA HISTÓRICA
                 </h1>
 
-                <div className='text-left text-[#363636] text-[14px] leading-loose'>
+                <div className='text-justify text-[#363636] text-[14px] leading-loose'>
                     <p>
                         La Institución Educativa se creó mediante RM N° 5225 el 06 de abril de 1961 
                         con el nombre de INSTITUTO EDUCATIVO INDUSTRIAL DE VARONES Nº 46. 
@@ -203,12 +228,17 @@ const Homepage = () => {
 
         </section>
 
-        <section className='text-black bg-white py-[50px] flex flex-col gap-y-10 px-[15px]'>
+        <section className='text-black bg-white py-[50px] flex flex-col items-center gap-y-10 px-[15px]'>
+            <div>
+                
+            </div>
             <h1 className='text-4xl font-bold'> 
                 EQUIPO DIRECTIVO
             </h1>
 
-            <div>
+            <div className='flex flex-row flex-wrap justify-center gap-x-[30px] gap-y-[60px]
+                max-w-[85%] md:max-w-[690px] lg:justify-between lg:max-w-[960px] xl:max-w-[89%] 2xl:max-w-[1400px]
+            '>
 
                 <CardEquipoDirectivo 
                     nombre="Einer Mariaca"
@@ -222,11 +252,30 @@ const Homepage = () => {
                     img={CardImgBaltazar}
                 />
 
+                <CardEquipoDirectivo 
+                    nombre="Vilma Tapahuasco"
+                    cargo="Sub Directora"
+                    img={CardImgTapahausco}
+                />
+
+                <CardEquipoDirectivo 
+                    nombre="Elva Silva"
+                    cargo="Sub Directora"
+                    img={CardImgSilva}
+                />
+
+                <CardEquipoDirectivo 
+                    nombre="Hugo Gutierrez"
+                    cargo="Sub Director Administrativo"
+                    img={CardImgGutierrez}
+                />
 
             </div>
 
         
         </section>
+
+        {/* <BtnScrollUp scrollToTop={scrollToTop}/> */}
 
         <FooterApp/>
 
