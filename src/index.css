@@ -25,11 +25,23 @@ a {
   text-decoration: inherit;
   transition-duration: 500ms;
 }
+li:hover{
+  box-shadow: inset 0 -4px 0 0 #449edd;
+  transition-duration: 500ms;
+}
+
 li:hover a {
   /* color: #535bf2; */
   color: #2a69b8;
   transition-duration: 500ms;
 }
+
+.burger-icon span{
+  width: 24px;
+  height: 2px;
+  background-color: black;
+}
+
 
 body {
   margin: 0;
