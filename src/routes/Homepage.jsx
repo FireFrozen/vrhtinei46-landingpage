@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import NavBar from "../components/NavBar";
 import SideMenu from '../components/SideMenu';
 import VisionComp from "../imagenes/visiOn-compartida.jpg";
@@ -27,12 +27,14 @@ const Homepage = () => {
     });
   };
 
+  const [hamburgerIsPressed, setHamburgerIsPressed] = useState(false);
 
   return (
-    <div className="w-screen max-w-full	">
-      <NavBar />
-      <SideMenu/>
-      <div id="inicio-pag" ref={initRef}></div>
+    <div className="w-screen max-w-full">
+      <NavBar hamburgerIsPressed= {hamburgerIsPressed} setHamburgerIsPressed={setHamburgerIsPressed}/>
+      <div className="h-[72px] lg:h-[80px]"></div>
+      <SideMenu  hamburgerIsPressed={hamburgerIsPressed} />
+      <div id="inicio-pag" ref={initRef} className=""> </div>
       <HomeSlider/>
 
       <section className="text-black bg-white">

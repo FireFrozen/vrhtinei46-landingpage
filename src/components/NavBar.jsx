@@ -2,11 +2,11 @@ import React from "react";
 import logo from "../imagenes/insignia-vrht46_mesa-de-trabajo-1-03.png";
 import { Link } from "react-router-dom";
 
-const NavBar = () => {
+const NavBar = (props) => {
 
   return (
     <>
-      <nav className="flex flex-row px-10 bg-white text-[#363636] w-full justify-between relative h-[72px] lg:h-[80px] items-center">
+      <nav className="flex flex-row px-10 bg-white text-[#363636] w-full justify-between fixed h-[72px] lg:h-[80px] items-center z-50">
         <div className="flex flex-row justify-start  items-center h-full">
           <Link to="/">
             <img src={logo} alt="logo-png" className="w-40" />
@@ -20,7 +20,7 @@ const NavBar = () => {
             </li>
 
             <li className="nav-link px-10 flex items-center">
-              <Link to="/">NOSOTROS</Link>
+              <Link to="/nosotros">NOSOTROS</Link>
             </li>
 
             <li className="nav-link px-10 flex items-center">
@@ -30,7 +30,7 @@ const NavBar = () => {
         </div>
 
         <div
-          onClick={() => {}}
+          onClick={() => {props.setHamburgerIsPressed(!props.hamburgerIsPressed)}}
           className="cursor-pointer burger-icon h-6 w-6 flex flex-col justify-center items-center gap-1 lg:hidden"
         >
           <span></span>

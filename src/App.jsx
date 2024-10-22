@@ -36,6 +36,7 @@ function App() {
       <BrowserRouter >
         <Routes>
           <Route path="/" element={<Homepage />}/> 
+          <Route path="/nosotros" element={<Homepage />}/> 
         </Routes>
         
         <a href="#">
