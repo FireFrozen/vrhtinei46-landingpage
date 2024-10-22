@@ -4,7 +4,12 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",],
   theme: {
     extend: {
-
+      colors:{
+        primary:"#08329a",
+        secondary:"#449edd",
+        darkgray:"#363636",
+        
+      }
     },
 
   },

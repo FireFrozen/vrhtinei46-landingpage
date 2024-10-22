@@ -1,12 +1,11 @@
 import { useState,useRef } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import { BrowserRouter,Routes, Route } from "react-router-dom";
 
 import { FaChevronUp } from "react-icons/fa";
 
 import Homepage from './routes/Homepage'
+
 
 function App() {
   const [count, setCount] = useState(0);
@@ -38,7 +37,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />}/> 
         </Routes>
-
+        
         <a href="#">
           <div className='scroll-up fixed flex justify-center items-center w-10 h-10 font-bold right-[30px] bottom-[60px]'>
             <FaChevronUp />
